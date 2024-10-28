@@ -1,2 +1,2 @@
 # XML-CSV-File-Conversion
-Convert files between XML to CSV / XLSX formats
+Convert files between XML to CSV / XLSX format
