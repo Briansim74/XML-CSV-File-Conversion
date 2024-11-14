@@ -10,11 +10,16 @@ Convert files between XML to CSV / XLSX format
 <br/>Attached are the relevant files:
 
 1. XML_test_flat.xlsx
-2. Output.xml
+2. Output1.xml
+3. Output2.xml
 
-<br/>In the XML_test_flat.xlsx document, it is a multi-sheet document consisting of rows of financial data values in sheet 0 - "Output_Values", and the corresponding XPaths to guide each data value in sheet 1 - "Output_XML_Path". Firstly, I converted the 2 sheets into Pandas DataFrames. Then, I converted these DataFrames into Python dictionaries from json formatted strings. I then created a recursive function create_root using the ElementTree library. The function creates a new child node for each unexplored nested XPath, or follows the existing tree for existing XPaths, and directs each value to the end node.
+<br/>In the XML_test_flat.xlsx document, it is a multi-sheet document consisting of rows of financial data values in sheet 0 - "Output_Values", and the corresponding XPaths to guide each data value in sheet 1 - "Output_XML_Path". Firstly, I converted the 2 sheets into Pandas DataFrames. Next, I sorted the DataFrames in order according to their column names, as the column names have not been ordered together. Then, I converted these DataFrames into Python dictionaries from json formatted strings. I then created a recursive function create_root using the ElementTree library. The function creates a new child node for each unexplored nested XPath, or follows the existing tree for existing XPaths, and directs each value to the end node.
 
-<br/>The XML tree is then converted into the an XML file format "Output.xml".
+<br/>For Output1, each new row entry within the xlsx document is added under a new "Rpt" XPath.
+
+<br/>For Output2, each all row entries within the xlsx document are added under the same XPath.
+
+<br/>The XML trees are then converted into the an XML file format "Output1.xml" and "Output2.xml" respectively.
 
 <br/>Next, I will be converting a hierarchical XML file into a multi-sheet XLSX document. There will be 2 methods that I will be converting the XML file, which will be described below.
 
